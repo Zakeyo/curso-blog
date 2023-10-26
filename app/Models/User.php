@@ -50,4 +50,12 @@ class User extends Authenticatable
             set: fn($value) => strtolower($value)
         );
     }
+
+    protected function email():Attribute{
+        return new Attribute(
+            get: fn($value) => ucwords($value),
+            set: fn($value) => strtolower($value)
+        );
+    }
+    
 }
